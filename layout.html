@@ -1,0 +1,41 @@
+{#
+    default/layout.html
+    ~~~~~~~~~~~~~~~~~~~
+
+    Sphinx layout template for the default theme.
+
+    :copyright: Copyright 2007-2011 by the Sphinx team, see AUTHORS.
+    :license: BSD, see LICENSE for details.
+#}
+
+{%- include "header-wrapper.html" %}
+
+{%- block content %}
+<section id="main-content">
+    {%- block document %}
+        <article>
+        {% block body %} {% endblock %}
+        </article>
+    {%- endblock %}
+</section>
+<aside id="sidebar">
+    {%- block sidebartoc %}
+    <h3>{{ _('Table Of Contents') }}</h3>
+    {{ toc }}
+    {%- endblock %}
+    {%- block sidebarsearch %}
+    <h3>{{ _('Search') }}</h3>
+    <form class="search" action="{{ pathto('search') }}" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="{{ _('Go') }}" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+        {{ _('Enter search terms or a module, class or function name.') }}
+    </p>
+    {%- endblock %}
+</aside>
+{%- endblock %}
+
+{%- include "footer-wrapper.html" %}
