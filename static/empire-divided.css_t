@@ -358,7 +358,10 @@ td.linenos pre {
 }
 
 table.highlighttable {
+    display:block;
     margin-left: 0.5em;
+    overflow: auto;
+    overflow-y: hidden;  /* fixes display issues on Chrome browsers */
 }
 
 table.highlighttable td {
