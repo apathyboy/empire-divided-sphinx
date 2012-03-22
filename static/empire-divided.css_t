@@ -169,9 +169,6 @@ img.align-center, .figure.align-center, object.align-center {
     text-align: right;
 }
 
-.highlight pre {
-    overflow-x: scroll;
-}
 
 /* -- topics ---------------------------------------------------------------- */
 
